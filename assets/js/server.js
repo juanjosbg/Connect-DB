@@ -60,7 +60,7 @@ const query = 'SELECT * FROM clientes WHERE id = ?';
   });
 });
 
-app.post('/enviar-formulario', (req, res) => {
+app.post('/Contacto', (req, res) => {
   const { nombre, email, edad, sexo, materia, fecha, mensaje } = req.body;
 
   const query = `
