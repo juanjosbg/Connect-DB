@@ -150,10 +150,10 @@
                                                 </div>
                                             </div>
 
-                                            
+
                                             <div class="d-flex align-items-center border-top card-body"
                                                 data-subject="all">
-                                                
+
                                                 <div class="ms-3">
                                                     <p class="mb-0 small">Ver todos las asignaturas ...</p>
                                                 </div>
@@ -181,8 +181,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesora: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar
-                                                Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('sociales')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +201,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesor: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('contaduria')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +221,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesor: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('matematicas')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +241,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesora: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('programacion')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -254,7 +261,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesora: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('programacion')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -272,7 +281,9 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesor: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('matematicas')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -290,9 +301,12 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-body-secondary">Profesor: </small>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-primary">Consultar Asignatura</button>
+                                            <button type="button" class="btn btn-sm btn-outline-success"
+                                                onclick="consultarAsignatura('fisica')">Consultar Asignatura
+                                            </button>
                                         </div>
                                     </div>
+                                    <div id="profesor-info" style="margin-top: 10px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -303,6 +317,7 @@
     </section>
 
     <!-- js -->
+    <script src="/assets/js/consultaDocente.js"></script>
     <script src="/assets/js/header-scrolled.js"></script>
     <script src="/assets/js/filter-maestros.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
