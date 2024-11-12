@@ -6,32 +6,31 @@ async function consultarAsignatura(materia) {
             throw new Error(`Error al consultar la asignatura: ${response.statusText}`);
         }
         const data = await response.json();
-
         console.log("Datos de la asignatura: ", data);
-
-        const profesorInfoDiv = document.querySelector(`[data-subject="${materia} all"] #profesor-info`);
+        const profesorInfoDivs = document.querySelectorAll(`.col[data-subject*="${materia}"] #profesor-info`);
 
         if (data.length > 0) {
-            const { nombre, materia: subject, hora, fechas } = data[0];
-            console.log("nombre ", nombre)
-            console.log("subject ", subject)
-            console.log("hora ", hora)
-            console.log("fechas ", fechas)
-            profesorInfoDiv.innerHTML = `
-                <div>
-                    <strong>Nombre:</strong> ${nombre}<br>
-                    <strong>Materia:</strong> ${subject}<br>
-                    <strong>Hora:</strong> ${hora}<br>
-                    <strong>Fecha:</strong> ${new Date(fechas).toLocaleDateString()}
-                </div>
-            `;
+            data.forEach((item, index) => {
+                if (profesorInfoDivs[index]) {
+                    const { nombre, materia: subject, hora, fechas } = item;
+                    profesorInfoDivs[index].innerHTML = `
+                        <div>
+                            <strong>Nombre:</strong> ${nombre}<br>
+                            <strong>Materia:</strong> ${subject}<br>
+                            <strong>Hora:</strong> ${hora}<br>
+                            <strong>Fecha:</strong> ${new Date(fechas).toLocaleDateString()}
+                        </div>
+                    `;
+                }
+            });
         } else {
-            profesorInfoDiv.innerHTML = '<div>No se encontró información del profesor.</div>';
+            // Muestra un mensaje si no hay datos para la materia.
+            profesorInfoDivs.forEach(div => {
+                div.innerHTML = '<div>No se encontró información del profesor.</div>';
+            });
         }
     } catch (error) {
         console.error('Error:', error);
         alert('Hubo un error al consultar la asignatura.');
     }
 }
-
-
